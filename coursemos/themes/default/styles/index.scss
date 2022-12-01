@@ -1,0 +1,33 @@
+/**
+ * 이 파일은 코스모스 나들 기본테마의 일부입니다. (https://www.coursemos.kr)
+ *
+ * 인텍스 레이아웃
+ *
+ * @file /modules/coursemos/naddle/themes/default/styles/index.scss
+ * @author Arzz (arzz@arzz.com)
+ * @license MIT License
+ * @modified 2022. 11. 24.
+ */
+header {
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    position: relative;
+
+    > div.visual {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        background: url(../images/intro.png) no-repeat 50% 50%;
+        background-size: cover;
+
+        > video {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

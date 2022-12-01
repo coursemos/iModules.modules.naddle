@@ -1,0 +1,128 @@
+/**
+ * 이 파일은 코스모스 나들 기본테마의 일부입니다. (https://www.coursemos.kr)
+ *
+ * 테마 레이아웃 공통 헤더
+ *
+ * @file /modules/coursemos/naddle/themes/default/styles/style.scss
+ * @author Arzz (arzz@arzz.com)
+ * @license MIT License
+ * @modified 2022. 11. 24.
+ */
+html {
+    font-family: 'SUIT';
+    font-size: 16px;
+}
+
+header {
+    > nav {
+        width: 100%;
+        height: 80px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+
+        > div.container {
+            height: 80px;
+
+            > h1 {
+                width: 200px;
+                height: 40px;
+                padding: 20px 0px;
+                display: inline-block;
+                vertical-align: top;
+
+                > a {
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                    font-size: 0;
+                    color: transparent;
+                    background-size: 176px 26px;
+                    background-repeat: no-repeat;
+                    background-position: 0 50%;
+                }
+            }
+
+            > ul {
+                width: calc(100% - 250px);
+                height: 40px;
+                list-style: none;
+                display: inline-block;
+                vertical-align: top;
+                padding: 20px 0px;
+                text-align: right;
+
+                > li {
+                    display: inline-block;
+                    vertical-align: top;
+                    height: 40px;
+                    padding: 0px 12px;
+
+                    > a {
+                        display: block;
+                        height: 40px;
+                        line-height: 40px;
+                        padding: 0px 12px;
+                        color: rgba(255, 255, 255, 0.8);
+                        font-weight: 700;
+                        font-size: 16px;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.container,
+.container-fluid,
+.container-xxl,
+.container-xl,
+.container-lg,
+.container-md,
+.container-sm {
+    width: 100%;
+    padding-right: 0.875rem;
+    padding-left: 0.875rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 576px) {
+    .container-sm,
+    .container {
+        max-width: 540px;
+    }
+}
+@media (min-width: 768px) {
+    .container-md,
+    .container-sm,
+    .container {
+        max-width: 720px;
+    }
+}
+@media (min-width: 992px) {
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container {
+        max-width: 960px;
+    }
+}
+@media (min-width: 1200px) {
+    .container-xl,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container {
+        max-width: 1140px;
+    }
+}
+@media (min-width: 1400px) {
+    .container-xxl,
+    .container-xl,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container {
+        max-width: 1280px;
+    }
+}

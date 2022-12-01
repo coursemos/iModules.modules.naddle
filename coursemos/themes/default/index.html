@@ -1,0 +1,69 @@
+<?php
+/**
+ * 이 파일은 코스모스 나들 기본테마의 일부입니다. (https://www.coursemos.kr)
+ *
+ * 테마 레이아웃 공통 헤더
+ *
+ * @file /modules/coursemos/naddle/themes/default/header.php
+ * @author Arzz (arzz@arzz.com)
+ * @license MIT License
+ * @modified 2022. 11. 24.
+ *
+ * @var Theme $theme 현재 테마 클래스
+ * @var \modules\coursemos\naddle\Naddle $owner 코스모스 나들클래스
+ * @var Site $site 현재 사이트
+ * @var Context $context 현재 컨텍스트
+ * @var Route $route 현재 경로
+ */
+if (defined('__IM__') == false) {
+    exit();
+}
+
+Html::font('SUIT');
+Html::style($theme->getBase() . '/styles/index.scss');
+
+$visuals = [
+    '/about'=>'intro1',
+    '/contact'=>'intro2',
+    '/insight'=>'intro3',
+    '/interview'=>'intro4'
+];
+
+$visual = $visuals[Router::get()->getPath()] ?? 'intro1';
+?>
+<header>
+    <nav>
+        <div class="container">
+            <h1><a href="<?php echo $site->getUrl(); ?>" style="background-image:url(<?php echo $site->getLogo('default')->getUrl('origin'); ?>);"><?php echo $site->getTitle(); ?></a></h1>
+            
+            <ul>
+                <?php foreach ($site->getSitemap() as $menu) { ?>
+                <li>
+                    <a href="<?php echo $menu->getUrl(); ?>"><?php echo $menu->getTitle(); ?></a>
+                    
+                    <?php if ($menu->hasChild() == true) { ?>
+                    <div data-role="submenu">
+                        <ul>
+                            <?php foreach ($menu->getChildren() as $menu) { ?>
+                            <li><a href="<?php echo $menu->getUrl(); ?>"><?php echo $menu->getTitle(); ?></a></li>
+                            <?php } ?>
+                        </ul>
+                    </div>
+                    <?php } ?>
+                </li>
+                <?php } ?>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="visual">
+        <video loop="loop" muted="muted" autoplay="autoplay"  playsinline>
+            <source src="<?php echo $theme->getDir().'/images/'.$visual; ?>.webm" type="video/mp4">
+            <source src="<?php echo $theme->getDir().'/images/'.$visual; ?>.mp4" type="video/webm">
+        </video>
+    </div>
+</header>
+
+<?php echo $content; ?>
+
+푸터 나오세요.
